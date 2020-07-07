@@ -229,21 +229,44 @@ License URL: http://creativecommons.org/licenses/by/3.0
         <h1 class="bwt-section-title text-uppercase">Calculadora del 10%</h1>
         <hr />
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="bdr">
               <h2>Calcular</h2>
-              <div class="image" >
+              <!-- <div class="image" >
                 <img src="images/btc.png" class="img-responsive" alt="" />
-              </div>
-              <p>
+              </div> -->
+              <!-- <p>
                 Buy Bitcoin (USD)<br />
                 $100-$500 = Rs80/USD<br />
                 $500-$2000 = Rs75/USD
               </p>
-              <a href="#">Buy Now!</a>
+              <a href="#">Buy Now!</a> -->
+              <form class="form-style-7">
+                <ul>
+                <li>
+                    <label for="name">CUC</label>
+                    <input type="number" name="name" maxlength="100" style="font-size: 27px;font-weight: 600;height: 10%;">
+                    <span>Cantidad de CUC que desea invertir en su compra</span>
+                </li>
+                <li>
+                    <label for="interest">% Interés</label>
+                    <input type="text" name="interest" maxlength="100" disabled value="10%" style="font-size: 27px;font-weight: 600;height: 10%;" >
+                    <span>% de Interés acordado</span>
+                </li>
+                <li>
+                    <label for="btc_price">Precio BTC Actual</label>
+                    <input type="number" name="btc_price" maxlength="100" style="font-size: 27px;font-weight: 600;height: 10%;">
+                    <span>Consulte el precio actual del Btc ahora en ⋙ <a href="https://www.binance.com/en" class="post-content" target="_blank" style="font-size: 14px;color:#ffff">Binance</a> ⋘</span>
+                </li>
+                </ul>
+                </form>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-2 " style="-webkit-animation: bounce 2s infinite ease-in-out; margin-top: 23%;"><a href="#percent_calculator" class="btn btn-box-calculator btn-xl page-scroll"
+            >Calcular</a
+          ></div>
+          
+          <div class="col-md-5">
             <div class="bdr">
               <h2>¿Qué obtengo?</h2>
 
