@@ -1007,3 +1007,13 @@ footer.bwt-footer p {
   background-color: #fff;
   border-color: #fff;
 }
+
+.style-result-calculation {
+  font-size: 32px;
+  font-weight: 600;
+  color: #f39c12;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed #f39c12;
+  padding-bottom: 15px;
+}

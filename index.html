@@ -245,24 +245,27 @@ License URL: http://creativecommons.org/licenses/by/3.0
                 <ul>
                 <li>
                     <label for="name">CUC</label>
-                    <input type="number" name="name" maxlength="100" style="font-size: 27px;font-weight: 600;height: 10%;">
+                    <input type="number" name="cuc" id="cuc" maxlength="100" style="font-size: 27px;font-weight: 600;height: 10%;">
                     <span>Cantidad de CUC que desea invertir en su compra</span>
                 </li>
                 <li>
                     <label for="interest">% Interés</label>
-                    <input type="text" name="interest" maxlength="100" disabled value="10%" style="font-size: 27px;font-weight: 600;height: 10%;" >
+                    <input type="text" id="interest" name="interest" maxlength="100" disabled value="10%" style="font-size: 27px;font-weight: 600;height: 10%;" >
                     <span>% de Interés acordado</span>
                 </li>
                 <li>
-                    <label for="btc_price">Precio BTC Actual</label>
-                    <input type="number" name="btc_price" maxlength="100" style="font-size: 27px;font-weight: 600;height: 10%;">
-                    <span>Consulte el precio actual del Btc ahora en ⋙ <a href="https://www.binance.com/en" class="post-content" target="_blank" style="font-size: 14px;color:#ffff">Binance</a> ⋘</span>
+                  <label for="btc_price">Precio BTC Actual</label>
+                  <input type="text" id="btc_price" name="btc_price" maxlength="100"  style="font-size: 27px;font-weight: 600;height: 10%;" >
+                  <span>Consulte el precio actual del Btc ahora en ⋙ <a href="https://www.binance.com/en" class="post-content" target="_blank" style="font-size: 14px;color:#ffff">Binance</a> ⋘</span>
+              </li>
+                <li>
+                    
                 </li>
                 </ul>
                 </form>
             </div>
           </div>
-          <div class="col-md-2 " style="-webkit-animation: bounce 2s infinite ease-in-out; margin-top: 23%;"><a href="#percent_calculator" class="btn btn-box-calculator btn-xl page-scroll"
+          <div class="col-md-2 " style="-webkit-animation: bounce 2s infinite ease-in-out; margin-top: 23%;"><a href="#percent_calculator" onClick="calculate()" class="btn btn-box-calculator btn-xl page-scroll"
             >Calcular</a
           ></div>
           
@@ -276,7 +279,18 @@ License URL: http://creativecommons.org/licenses/by/3.0
                   que podrá optener.</b
                 >
               </div>
-              <div class="image">
+              <div id="img-bitcoin" style="display: none;">
+                <img
+                id="img-bitcoin"
+                  src="images/bitcoin-coin.png"
+                  style="width: 15%;margin-left: -6%;margin-top: 2%;margin-bottom: 3%;"
+                  alt=""
+                />
+              </div>
+              <div id="calculate-result" class="style-result-calculation">
+                
+              </div>
+              <div id="img_?" class="image">
                 <img
                 id="interrogation_img"
                   src="images/interrogation_btc.png"
@@ -469,6 +483,18 @@ License URL: http://creativecommons.org/licenses/by/3.0
     <!-- Theme JavaScript -->
     <script src="js/script.js"></script>
     <script>
+    function calculate(){
+      //get params
+      let cuc = $('#cuc').val() * 1;
+      let interest = 10;
+      let btc_price = $('#btc_price').val() * 1;
+      let btc_price_with_percent = ((btc_price * 10)/100) + btc_price;
+      let result = cuc / btc_price_with_percent
+      $('#interrogation_img').css('display','none');
+      $('#img-bitcoin').css("display","block")
+      $('#calculate-result').text(result.toPrecision(7) + " BTC");
+      console.log('valuessss',[btc_price_with_percent, result.toPrecision(7)]);
+    }
     $(document).ready(function () {
         //alert('bummm')
         //TODO:Testing jquery okok
