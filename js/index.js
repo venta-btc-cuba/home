@@ -40,7 +40,13 @@ function checkDisplayType() {
     )
     $('#contact-hangout').addClass('device-dispositions-contact-icons')
     $('#btn-calc').addClass('device-btn-calc')
-    // The viewport is less than 768 pixels wide
+
+    //paint text contact
+    $('#text-whatsapp').addClass('device-text-contact-align ')
+    $('#text-telegram').addClass('device-text-contact-align ')
+    $('#text-hangout').addClass('device-text-contact-align ')
+    //styles row in movile view
+    $('#row-calc-action').addClass('device-reduce-width')
   } else {
     // The viewport is at least 768 pixels wide
     $('#contact-whatsapp').removeClass('device-dispositions-contact-icons')
@@ -49,5 +55,12 @@ function checkDisplayType() {
     )
     $('#contact-hangout').removeClass('device-dispositions-contact-icons')
     $('#btn-calc').removeClass('device-btn-calc')
+
+    //clean text contact styles
+    $('#text-whatsapp').removeClass('device-text-contact-align ')
+    $('#text-telegram').removeClass('device-text-contact-align ')
+    $('#text-hangout').removeClass('device-text-contact-align ')
+    //styles row in movile view
+    $('#row-calc-action').removeClass('device-reduce-width')
   }
 }
