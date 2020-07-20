@@ -179,7 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0
       <div class="row">
         
           <div class="col-md-5"></div>
-          <div class="col-md-2 " style="-webkit-animation: bounce 2s infinite ease-in-out;"><a href="#percent_calculator" class="btn btn-box btn-xl page-scroll"
+          <div class="col-md-2 " style="-webkit-animation: bounce 2s infinite ease-in-out;" id="btn-calc"><a href="#percent_calculator" class="btn btn-box btn-xl page-scroll"
             >Calcule su compra</a
           ></div>
           <div class="col-md-5"></div>
@@ -220,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0
                 </li>
                 <li>
                   <label for="btc_price">Precio BTC Actual</label>
-                  <input type="text" id="btc_price" name="btc_price" maxlength="100"  style="font-size: 27px;font-weight: 600;height: 10%;" >
+                  <input type="number" id="btc_price" name="btc_price" maxlength="100"  style="font-size: 27px;font-weight: 600;height: 10%;" >
                   <span>Consulte el precio actual del Btc ahora en ⋙ <a href="https://www.binance.com/en" class="post-content" target="_blank" style="font-size: 14px;color:#ffff">Binance</a> ⋘</span>
               </li>
                 <li>
@@ -276,42 +276,45 @@ License URL: http://creativecommons.org/licenses/by/3.0
               <div class="btcGet">Puede contactarnos en:</div>
               <br />
               <div class="row">
-                <div class="image-nets col-md-2">
-                  <img
-                    src="images/telegram.png"
-                    class="img-responsive img-disposition"
-                    alt=""
-                  />
-                  <div>
-                    <a href="https://t.me/otipip90" target="_blank"
-                      >@TiestoManuel_BTC</a
+                <a
+                    href="https://wa.link/yi11f7"
+                    target="_blank"
                     >
-                  </div>
-                </div>
-                <div class="image-nets col-md-3 red-margin-content">
+                <div class="image-nets col-md-2" id="contact-whatsapp">
                   <img
                     src="images/whatsApp.png"
                     class="img-responsive img-disposition"
                     alt=""
                   />
 
-                  <a
-                    href="https://wa.link/yi11f7"
-                    target="_blank"
-                    >Cuba-Venta-BTC-10%</a
-                  >
+                  https://wa.link/yi11f7
                 </div>
-                <div class="image-nets col-md-2">
+                </a>
+                <a href="https://t.me/otipip90" target="_blank"
+                      >
+                <div class="image-nets col-md-3 red-margin-content" id="contact-telegram">
+                  <img
+                    src="images/telegram.png"
+                    class="img-responsive img-disposition"
+                    alt=""
+                  />
+                  <div>
+                    https://t.me/otipip90
+                  </div>
+                </div>
+                </a>
+                
+                <a href="https://hangouts.google.com/" target="_blank">
+                <div class="image-nets col-md-2" id="contact-hangout">
                   <img
                     src="images/hangout.png"
                     class="img-responsive img-disposition"
                     alt=""
                   />
                   <div>
-                    <a href="https://hangouts.google.com/" target="_blank"></a>
-                      venta.btc.cuba</a
-                    >
+                    otipip90@gmail.com
                   </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -404,7 +407,8 @@ License URL: http://creativecommons.org/licenses/by/3.0
               <a
               href="https://wa.link/yi11f7"
               target="_blank"
-              >Cuba-Venta-BTC-10%</a>
+              >https://wa.link/yi11f7
+            </a>
             </div>
           </div>
 
@@ -413,19 +417,22 @@ License URL: http://creativecommons.org/licenses/by/3.0
             <div class="icon-text">
               <h3>Nuestro Telegram</h3>
               <a href="https://t.me/otipip90" target="_blank"
-            >VentaBTC²uba</a>
+            >
+            https://t.me/otipip90</a>
             </div>
           </div>
+           <a href="https://hangouts.google.com/" target="_blank">
+            <div class="col-sm-12 col-md-4 md-top-marg">
+              <div class="icon"><i class="fa fa-weixin"></i></div>
 
-          <div class="col-sm-12 col-md-4 md-top-marg">
-            <div class="icon"><i class="fa fa-weixin"></i></div>
-            <div class="icon-text">
-              <h3>Nuestro Hangout</h3>
-              <p>
-                VentaBTC²uba
-              </p>
+              <div class="icon-text">
+                <h3>Nuestro Hangout</h3>
+                <p>
+                  <a href="https://hangouts.google.com/" target="_blank">otipip90@gmail.com</a>
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </footer>
@@ -452,45 +459,8 @@ License URL: http://creativecommons.org/licenses/by/3.0
     <script src="js/jquery.lightbox.min.js"></script>
     <!-- Theme JavaScript -->
     <script src="js/script.js"></script>
-    <script>
-    function calculate(){
-      $("#calculation").addClass("disabled-div");
-      $(".loader").removeClass("loader-hidden")
-      let cuc = $('#cuc').val() * 1;
-      let btc_price = $('#btc_price').val() * 1;
-      
-      if(btc_price == 0 || cuc == 0){
-        alert('ES NECESARIO QUE COMPLETE LOS CAMPOS DEL FORMULARIO. !!!')
-        //RESTORE APPARIENCE
-        this.restoreAppearance()
-      }else{
-        setTimeout(function() {
-          //get params
-          let interest = 10;
-          let btc_price_with_percent = ((btc_price * 10)/100) + btc_price;
-          
-          let result = cuc / btc_price_with_percent
-          $('#interrogation_img').css('display','none');
-          $('#img-bitcoin').css("display","block")
-          $('#calculate-result').text(result.toPrecision(7) + " BTC");
-          console.log('valuessss',[btc_price_with_percent, result.toPrecision(7)]);
-          //RESTORE APPARIENCE
-          this.restoreAppearance();
-        }, 3000);
-      }
-      
-    }
-    function restoreAppearance(){
-      $("#calculation").removeClass("disabled-div");
-      $(".loader").addClass("loader-hidden")
-    }
-    $(document).ready(function () {
-        //alert('bummm')
-        //TODO:Testing jquery okok
-        // setTimeout(function() {
-        //     $("#interrogation_img").css( 'display', 'none');
-        // }, 3000);
-    })
-    </script>
+    <script src="js/index.js" ></script>
+    
+    
   </body>
 </html>

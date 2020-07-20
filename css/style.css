@@ -459,7 +459,7 @@ section.bwt-buyrate p {
 } */
 section.bwt-buyrate a:hover {
   background: #333;
-  color: #fff;
+  color: #0770ad;
 }
 
 /* SELL RATE * -------------------------- */
@@ -1133,4 +1133,18 @@ footer.bwt-footer p {
 
 .loader-visible {
   display: block;
+}
+
+.device-btn-calc {
+  /*In movile mode add to tag [a]*/
+  margin-left: 24%;
+}
+
+.device-dispositions-contact-icons {
+  left: 26%;
+  width: 26% !important;
+}
+
+.device-dispositions-contact-icons-middle {
+  margin-left: 1%;
 }
