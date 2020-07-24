@@ -47,6 +47,9 @@ function checkDisplayType() {
     $('#text-hangout').addClass('device-text-contact-align ')
     //styles row in movile view
     $('#row-calc-action').addClass('device-reduce-width')
+
+    //whatsappqr design
+    $('#qr-whatsapp').addClass('device-qr-whatsapp-design')
   } else {
     // The viewport is at least 768 pixels wide
     $('#contact-whatsapp').removeClass('device-dispositions-contact-icons')
@@ -62,5 +65,8 @@ function checkDisplayType() {
     $('#text-hangout').removeClass('device-text-contact-align ')
     //styles row in movile view
     $('#row-calc-action').removeClass('device-reduce-width')
+    //qr
+    $('#qr-whatsapp').removeClass('device-qr-whatsapp-design')
+    $('#qr-whatsapp').addClass('qr-whatsapp-design')
   }
 }

@@ -1135,6 +1135,17 @@ footer.bwt-footer p {
   display: block;
 }
 
+.qr-whatsapp-design {
+  width: 37%;
+  margin-left: 25%;
+  margin-top: 4%;
+}
+
+.device-qr-whatsapp-design {
+  margin-top: 4%;
+  margin-left: 30%;
+}
+
 .device-btn-calc {
   /*In movile mode add to tag [a]*/
   margin-left: 24%;
