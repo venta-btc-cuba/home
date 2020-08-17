@@ -10,6 +10,7 @@ function calculate() {
   if (btc_price == 0 || cuc == 0) {
     alert('ES NECESARIO QUE COMPLETE LOS CAMPOS DEL FORMULARIO. !!!')
     //RESTORE APPARIENCE
+
     this.restoreAppearance()
   } else {
     setTimeout(function () {
